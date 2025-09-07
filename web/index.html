@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>XIAO ESP32S3 MJPEG Stream</title>
+<style>
+body{font-family:system-ui,Segoe UI,Arial;margin:0;padding:1rem;display:grid;gap:1rem}
+header{display:flex;align-items:center;gap:.5rem}
+img{max-width:100%;height:auto;background:#000}
+.row{display:flex;gap:1rem;flex-wrap:wrap}
+.card{padding:1rem;border:1px solid #ddd;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+label{display:block;margin:.25rem 0 .5rem}
+input[type=range]{width:250px}
+button{padding:.5rem 1rem;border-radius:10px;border:1px solid #ccc;background:#f6f6f6;cursor:pointer}
+</style>
+</head>
+<body>
+<header>
+<h3>🎥 XIAO ESP32S3 Sense – MJPEG Stream</h3>
+</header>
+<div class="row">
+<div class="card">
+<img id="stream" src="/stream" alt="video stream" />
+</div>
+<div class="card">
+<div>
+<label>Single Shot</label>
+<button onclick="window.open('/jpg','_blank')">Capture JPG</button>
+</div>
+<div>
+<label for="fs">Frame Size</label>
+<select id="fs" onchange="set('/control?framesize='+this.value)">
+<option value="10">UXGA</option>
+<option value="8">SVGA</option>
+<option value="6" selected>VGA</option>
+<option value="5">CIF</option>
+<option value="3">QVGA</option>
+</select>
+</div>
+<div>
+<label for="q">JPEG Quality</label>
+<input id="q" type="range" min="6" max="63" value="12" oninput="set('/control?quality='+this.value)">
+</div>
+<div>
+<label for="fps">(Note) MJPEG FPS depends on Wi‑Fi & PSRAM</label>
+</div>
+</div>
+</div>
+<script>
+async function set(url){ try{ await fetch(url); }catch(e){} }
+</script>
+</body>
+</html>

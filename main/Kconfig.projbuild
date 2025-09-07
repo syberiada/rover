@@ -1,0 +1,20 @@
+menu "Rover Settings"
+
+
+config APP_FRAME_SIZE
+string "Frame size (QQVGA..UXGA)"
+default "QVGA" # try QVGA/SVGA/XGA/UXGA depending on FPS needs
+
+
+config APP_JPEG_QUALITY
+int "JPEG quality (lower=better)"
+range 5 63
+default 12
+
+
+config APP_DUAL_FB
+bool "Use double frame buffers (faster MJPEG)"
+default y
+
+
+endmenu
