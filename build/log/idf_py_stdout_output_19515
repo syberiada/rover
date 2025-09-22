@@ -1,0 +1,384 @@
+Command: ninja all
+[1/9] Performing build step for 'bootloader'
+[1/1] cd /home/gen/Projects/rover/build/bootloader/esp-idf/esptool_py && /home/gen/.espressif/python_env/idf5.5_py3.13_env/bin/python /home/gen/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/gen/Projects/rover/build/bootloader/bootloader.bin
+Bootloader binary size 0x5240 bytes. 0x2dc0 bytes (36%) free.
+[2/9] No install step for 'bootloader'
+[3/9] Completed 'bootloader'
+[4/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj 
+/home/gen/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v5.5.1\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/home/gen/Projects/rover/build/config -I/home/gen/Projects/rover/main -I/home/gen/esp/esp-idf/components/newlib/platform_include -I/home/gen/esp/esp-idf/components/freertos/config/include -I/home/gen/esp/esp-idf/components/freertos/config/include/freertos -I/home/gen/esp/esp-idf/components/freertos/config/xtensa/include -I/home/gen/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/home/gen/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/home/gen/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/home/gen/esp/esp-idf/components/freertos/esp_additions/include -I/home/gen/esp/esp-idf/components/esp_hw_support/include -I/home/gen/esp/esp-idf/components/esp_hw_support/include/soc -I/home/gen/esp/esp-idf/components/esp_hw_support/include/soc/esp32s3 -I/home/gen/esp/esp-idf/components/esp_hw_support/dma/include -I/home/gen/esp/esp-idf/components/esp_hw_support/ldo/include -I/home/gen/esp/esp-idf/components/esp_hw_support/debug_probe/include -I/home/gen/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/include -I/home/gen/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/tuning_scheme_impl/include -I/home/gen/esp/esp-idf/components/esp_hw_support/power_supply/include -I/home/gen/esp/esp-idf/components/esp_hw_support/port/esp32s3/. -I/home/gen/esp/esp-idf/components/esp_hw_support/port/esp32s3/include -I/home/gen/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/port/esp32s3/. -I/home/gen/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/port/esp32s3/include -I/home/gen/esp/esp-idf/components/heap/include -I/home/gen/esp/esp-idf/components/heap/tlsf -I/home/gen/esp/esp-idf/components/log/include -I/home/gen/esp/esp-idf/components/soc/include -I/home/gen/esp/esp-idf/components/soc/esp32s3 -I/home/gen/esp/esp-idf/components/soc/esp32s3/include -I/home/gen/esp/esp-idf/components/soc/esp32s3/register -I/home/gen/esp/esp-idf/components/hal/platform_port/include -I/home/gen/esp/esp-idf/components/hal/esp32s3/include -I/home/gen/esp/esp-idf/components/hal/include -I/home/gen/esp/esp-idf/components/esp_rom/include -I/home/gen/esp/esp-idf/components/esp_rom/esp32s3/include -I/home/gen/esp/esp-idf/components/esp_rom/esp32s3/include/esp32s3 -I/home/gen/esp/esp-idf/components/esp_rom/esp32s3 -I/home/gen/esp/esp-idf/components/esp_common/include -I/home/gen/esp/esp-idf/components/esp_system/include -I/home/gen/esp/esp-idf/components/esp_system/port/soc -I/home/gen/esp/esp-idf/components/esp_system/port/include/private -I/home/gen/esp/esp-idf/components/xtensa/esp32s3/include -I/home/gen/esp/esp-idf/components/xtensa/include -I/home/gen/esp/esp-idf/components/xtensa/deprecated_include -I/home/gen/esp/esp-idf/components/lwip/include -I/home/gen/esp/esp-idf/components/lwip/include/apps -I/home/gen/esp/esp-idf/components/lwip/include/apps/sntp -I/home/gen/esp/esp-idf/components/lwip/lwip/src/include -I/home/gen/esp/esp-idf/components/lwip/port/include -I/home/gen/esp/esp-idf/components/lwip/port/freertos/include -I/home/gen/esp/esp-idf/components/lwip/port/esp32xx/include -I/home/gen/esp/esp-idf/components/lwip/port/esp32xx/include/arch -I/home/gen/esp/esp-idf/components/lwip/port/esp32xx/include/sys -I/home/gen/esp/esp-idf/components/esp_http_server/include -I/home/gen/esp/esp-idf/components/http_parser -I/home/gen/esp/esp-idf/components/esp_event/include -I/home/gen/esp/esp-idf/components/esp_timer/include -I/home/gen/esp/esp-idf/components/esp_netif/include -I/home/gen/esp/esp-idf/components/nvs_flash/include -I/home/gen/esp/esp-idf/components/esp_partition/include -I/home/gen/esp/esp-idf/components/wifi_provisioning/include -I/home/gen/esp/esp-idf/components/protocomm/include/common -I/home/gen/esp/esp-idf/components/protocomm/include/security -I/home/gen/esp/esp-idf/components/protocomm/include/transports -I/home/gen/esp/esp-idf/components/protocomm/include/crypto/srp6a -I/home/gen/esp/esp-idf/components/protocomm/proto-c -I/home/gen/esp/esp-idf/components/esp_wifi/include -I/home/gen/esp/esp-idf/components/esp_wifi/include/local -I/home/gen/esp/esp-idf/components/esp_wifi/wifi_apps/include -I/home/gen/esp/esp-idf/components/esp_wifi/wifi_apps/nan_app/include -I/home/gen/esp/esp-idf/components/esp_phy/include -I/home/gen/esp/esp-idf/components/esp_phy/esp32s3/include -I/home/gen/Projects/rover/managed_components/espressif__esp32-camera/driver/include -I/home/gen/Projects/rover/managed_components/espressif__esp32-camera/conversions/include -I/home/gen/esp/esp-idf/components/driver/deprecated -I/home/gen/esp/esp-idf/components/driver/i2c/include -I/home/gen/esp/esp-idf/components/driver/touch_sensor/include -I/home/gen/esp/esp-idf/components/driver/twai/include -I/home/gen/esp/esp-idf/components/driver/touch_sensor/esp32s3/include -I/home/gen/esp/esp-idf/components/esp_pm/include -I/home/gen/esp/esp-idf/components/esp_ringbuf/include -I/home/gen/esp/esp-idf/components/esp_driver_gpio/include -I/home/gen/esp/esp-idf/components/esp_driver_pcnt/include -I/home/gen/esp/esp-idf/components/esp_driver_gptimer/include -I/home/gen/esp/esp-idf/components/esp_driver_spi/include -I/home/gen/esp/esp-idf/components/esp_driver_mcpwm/include -I/home/gen/esp/esp-idf/components/esp_driver_ana_cmpr/include -I/home/gen/esp/esp-idf/components/esp_driver_i2s/include -I/home/gen/esp/esp-idf/components/esp_driver_sdmmc/include -I/home/gen/esp/esp-idf/components/sdmmc/include -I/home/gen/esp/esp-idf/components/esp_driver_sdspi/include -I/home/gen/esp/esp-idf/components/esp_driver_sdio/include -I/home/gen/esp/esp-idf/components/esp_driver_dac/include -I/home/gen/esp/esp-idf/components/esp_driver_rmt/include -I/home/gen/esp/esp-idf/components/esp_driver_tsens/include -I/home/gen/esp/esp-idf/components/esp_driver_sdm/include -I/home/gen/esp/esp-idf/components/esp_driver_i2c/include -I/home/gen/esp/esp-idf/components/esp_driver_uart/include -I/home/gen/esp/esp-idf/components/vfs/include -I/home/gen/esp/esp-idf/components/esp_driver_ledc/include -I/home/gen/esp/esp-idf/components/esp_driver_parlio/include -I/home/gen/esp/esp-idf/components/esp_driver_usb_serial_jtag/include -I/home/gen/esp/esp-idf/components/esp_driver_twai/include -I/home/gen/Projects/rover/managed_components/espressif__esp_jpeg/include -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -mdisable-hardware-atomics -Og -fno-shrink-wrap -fmacro-prefix-map=/home/gen/Projects/rover=. -fmacro-prefix-map=/home/gen/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj -c /home/gen/Projects/rover/main/main.c
+/home/gen/Projects/rover/main/main.c: In function 'stream_handler':
+/home/gen/Projects/rover/main/main.c:41:28: error: 'STREAM_CONTENT_TYPE' undeclared (first use in this function)
+   41 |   httpd_resp_set_type(req, STREAM_CONTENT_TYPE);
+      |                            ^~~~~~~~~~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:41:28: note: each undeclared identifier is reported only once for each function it appears in
+/home/gen/Projects/rover/main/main.c:49:53: error: 'STREAM_PART' undeclared (first use in this function)
+   49 |     int hlen = snprintf(part_buf, sizeof(part_buf), STREAM_PART, fb->len);
+      |                                                     ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:50:36: error: 'STREAM_BOUNDARY' undeclared (first use in this function)
+   50 |     if (httpd_resp_send_chunk(req, STREAM_BOUNDARY, strlen(STREAM_BOUNDARY)) !=
+      |                                    ^~~~~~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c: In function 'root_handler':
+/home/gen/Projects/rover/main/main.c:64:50: error: 'stream' undeclared (first use in this function); did you mean 'strcat'?
+   64 |   const char *html = "ESP32S3 Camera<img src=" / stream ">";
+      |                                                  ^~~~~~
+      |                                                  strcat
+/home/gen/Projects/rover/main/main.c:64:57: error: expected ',' or ';' before string constant
+   64 |   const char *html = "ESP32S3 Camera<img src=" / stream ">";
+      |                                                         ^~~
+/home/gen/Projects/rover/main/main.c: In function 'start_camera':
+/home/gen/Projects/rover/main/main.c:96:41: error: 'PWDN_GPIO_NUM' undeclared (first use in this function); did you mean 'Y9_GPIO_NUM'?
+   96 |   camera_config_t config = {.pin_pwdn = PWDN_GPIO_NUM,
+      |                                         ^~~~~~~~~~~~~
+      |                                         Y9_GPIO_NUM
+/home/gen/Projects/rover/main/main.c:97:42: error: 'RESET_GPIO_NUM' undeclared (first use in this function)
+   97 |                             .pin_reset = RESET_GPIO_NUM,
+      |                                          ^~~~~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:98:41: error: 'XCLK_GPIO_NUM' undeclared (first use in this function); did you mean 'Y9_GPIO_NUM'?
+   98 |                             .pin_xclk = XCLK_GPIO_NUM,
+      |                                         ^~~~~~~~~~~~~
+      |                                         Y9_GPIO_NUM
+/home/gen/Projects/rover/main/main.c:99:45: error: 'SIOD_GPIO_NUM' undeclared (first use in this function); did you mean 'Y9_GPIO_NUM'?
+   99 |                             .pin_sccb_sda = SIOD_GPIO_NUM,
+      |                                             ^~~~~~~~~~~~~
+      |                                             Y9_GPIO_NUM
+/home/gen/Projects/rover/main/main.c:100:45: error: 'SIOC_GPIO_NUM' undeclared (first use in this function); did you mean 'Y9_GPIO_NUM'?
+  100 |                             .pin_sccb_scl = SIOC_GPIO_NUM,
+      |                                             ^~~~~~~~~~~~~
+      |                                             Y9_GPIO_NUM
+/home/gen/Projects/rover/main/main.c:18:6: error: stray '#' in program
+   18 |   48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |      ^
+/home/gen/Projects/rover/main/main.c:102:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  102 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:18:7: error: expected '}' before 'define'
+   18 |   48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |       ^~~~~~
+/home/gen/Projects/rover/main/main.c:102:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  102 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:96:28: note: to match this '{'
+   96 |   camera_config_t config = {.pin_pwdn = PWDN_GPIO_NUM,
+      |                            ^
+/home/gen/Projects/rover/main/main.c:18:29: error: stray '#' in program
+   18 |   48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |                             ^
+/home/gen/Projects/rover/main/main.c:102:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  102 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:18:52: error: stray '#' in program
+   18 |   48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |                                                    ^
+/home/gen/Projects/rover/main/main.c:102:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  102 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:18:75: error: stray '#' in program
+   18 |   48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |                                                                           ^
+/home/gen/Projects/rover/main/main.c:102:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  102 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:18:98: error: stray '#' in program
+   18 |   48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |                                                                                                  ^
+/home/gen/Projects/rover/main/main.c:102:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  102 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:18:121: error: stray '#' in program
+   18 |   48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |                                                                                                                         ^
+/home/gen/Projects/rover/main/main.c:102:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  102 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:18:144: error: stray '#' in program
+   18 |   48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |                                                                                                                                                ^
+/home/gen/Projects/rover/main/main.c:102:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  102 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:18:167: error: stray '#' in program
+   18 |   48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |                                                                                                                                                                       ^
+/home/gen/Projects/rover/main/main.c:102:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  102 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:18:193: error: stray '#' in program
+   18 |   48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |                                                                                                                                                                                                 ^
+/home/gen/Projects/rover/main/main.c:102:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  102 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:18:218: error: stray '#' in program
+   18 |   48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |                                                                                                                                                                                                                          ^
+/home/gen/Projects/rover/main/main.c:102:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  102 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c: In function 'app_main':
+/home/gen/Projects/rover/main/main.c:164:1: error: unknown type name 'You'
+  164 | You said:
+      | ^~~
+/home/gen/Projects/rover/main/main.c:164:9: error: expected '=', ',', ';', 'asm' or '__attribute__' before ':' token
+  164 | You said:
+      |         ^
+/home/gen/Projects/rover/main/main.c:178:116: error: stray '\342' in program
+  178 | It uses the official espressif/esp32-camera component and the ESP-IDF HTTP server. The camera pin map matches Seeed<U+2019>s docs, and the stream/handler patterns follow Espressif<U+2019>s camera driver examples.
+      |                                                                                                                    ^~~~~~~~
+/home/gen/Projects/rover/main/main.c:178:173: error: stray '\342' in program
+  178 | It uses the official espressif/esp32-camera component and the ESP-IDF HTTP server. The camera pin map matches Seeed<U+2019>s docs, and the stream/handler patterns follow Espressif<U+2019>s camera driver examples.
+      |                                                                                                                                                                                    ^~~~~~~~
+/home/gen/Projects/rover/main/main.c:190:27: error: stray '#' in program
+  190 |     idf.py menuconfig     # ensure PSRAM is enabled @ 80MHz
+      |                           ^
+/home/gen/Projects/rover/main/main.c:190:53: error: stray '@' in program
+  190 |     idf.py menuconfig     # ensure PSRAM is enabled @ 80MHz
+      |                                                     ^
+/home/gen/Projects/rover/main/main.c:190:55: error: invalid suffix "MHz" on integer constant
+  190 |     idf.py menuconfig     # ensure PSRAM is enabled @ 80MHz
+      |                                                       ^~~~~
+/home/gen/Projects/rover/main/main.c:198:16: error: stray '\342' in program
+  198 |     If you see <U+201C>camera init failed<U+201D>, double-check PSRAM is enabled and the pins match the Sense carrier mapping (included on the canvas).
+      |                ^~~~~~~~
+/home/gen/Projects/rover/main/main.c:198:35: error: stray '\342' in program
+  198 |     If you see <U+201C>camera init failed<U+201D>, double-check PSRAM is enabled and the pins match the Sense carrier mapping (included on the canvas).
+      |                                          ^~~~~~~~
+/home/gen/Projects/rover/main/main.c:206:81: warning: multi-character literal with 19 characters exceeds 'int' size of 4 bytes
+  206 | I am getting this error when building:  error: implicit declaration of function 'httpd_resp_send_400';
+      |                                                                                 ^~~~~~~~~~~~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:207:1: error: unknown type name 'did'
+  207 | did you mean 'httpd_resp_send_500'
+      | ^~~
+/home/gen/Projects/rover/main/main.c:207:9: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'mean'
+  207 | did you mean 'httpd_resp_send_500'
+      |         ^~~~
+/home/gen/Projects/rover/main/main.c:207:14: warning: multi-character literal with 19 characters exceeds 'int' size of 4 bytes
+  207 | did you mean 'httpd_resp_send_500'
+      |              ^~~~~~~~~~~~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:211:11: error: stray '\342' in program
+  211 |     Right <U+2014> good catch.In ESP - IDF,
+      |           ^~~~~~~~
+/home/gen/Projects/rover/main/main.c:223:33: error: 'req' undeclared (first use in this function); did you mean 'ret'?
+  223 | if (httpd_req_get_url_query_str(req, buf, sizeof(buf)) != ESP_OK)
+      |                                 ^~~
+      |                                 ret
+/home/gen/Projects/rover/main/main.c:223:38: error: 'buf' undeclared (first use in this function)
+  223 | if (httpd_req_get_url_query_str(req, buf, sizeof(buf)) != ESP_OK)
+      |                                      ^~~
+/home/gen/Projects/rover/main/main.c:224:10: error: implicit declaration of function 'httpd_resp_send_400'; did you mean 'httpd_resp_send_500'? [-Wimplicit-function-declaration]
+  224 |   return httpd_resp_send_400(req);
+      |          ^~~~~~~~~~~~~~~~~~~
+      |          httpd_resp_send_500
+/home/gen/Projects/rover/main/main.c:224:10: error: 'return' with a value, in function returning void [-Wreturn-mismatch]
+/home/gen/Projects/rover/main/main.c:132:6: note: declared here
+  132 | void app_main(void) {
+      |      ^~~~~~~~
+/home/gen/Projects/rover/main/main.c:226:1: error: unknown type name 'with'
+  226 | with something like :
+      | ^~~~
+/home/gen/Projects/rover/main/main.c:226:16: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'like'
+  226 | with something like :
+      |                ^~~~
+In file included from /home/gen/Projects/rover/managed_components/espressif__esp32-camera/driver/include/esp_camera.h:69,
+                 from /home/gen/Projects/rover/main/main.c:3:
+/home/gen/esp/esp-idf/components/esp_common/include/esp_err.h:23:25: error: 'return' with a value, in function returning void [-Wreturn-mismatch]
+   23 | #define ESP_FAIL        -1      /*!< Generic esp_err_t code indicating failure */
+      |                         ^
+/home/gen/Projects/rover/main/main.c:236:10: note: in expansion of macro 'ESP_FAIL'
+  236 |   return ESP_FAIL;
+      |          ^~~~~~~~
+/home/gen/Projects/rover/main/main.c:132:6: note: declared here
+  132 | void app_main(void) {
+      |      ^~~~~~~~
+/home/gen/Projects/rover/main/main.c:239:1: error: unknown type name 'That'
+  239 | That way you explicitly set the HTTP status and return an error response.
+      | ^~~~
+/home/gen/Projects/rover/main/main.c:239:10: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'you'
+  239 | That way you explicitly set the HTTP status and return an error response.
+      |          ^~~
+/home/gen/Projects/rover/main/main.c:241:1: error: stray '\342' in program
+  241 | <U+2705> Fix: remove all calls to httpd_resp_send_400() and use the above pattern.
+      | ^~~~~~~~
+/home/gen/Projects/rover/main/main.c:245:108: warning: missing terminating ' character
+  245 | linker fails with the following: : esp-idf/freertos/libfreertos.a(app_startup.c.obj): in function main_task':
+      |                                                                                                            ^
+/home/gen/Projects/rover/main/main.c:245:108: error: missing terminating ' character
+  245 | linker fails with the following: : esp-idf/freertos/libfreertos.a(app_startup.c.obj): in function main_task':
+      |                                                                                                            ^~
+/home/gen/Projects/rover/main/main.c:246:116: warning: missing terminating ' character
+  246 | /home/gen/esp/esp-idf/components/freertos/app_startup.c:206:(.text.main_task+0xd9): undefined reference to app_main'
+      |                                                                                                                    ^
+/home/gen/Projects/rover/main/main.c:246:116: error: missing terminating ' character
+/home/gen/Projects/rover/main/main.c:249:41: error: stray '\342' in program
+  249 | That linker error means the build couldn<U+2019>t find your app_main() function. In ESP-IDF, app_main() is mandatory (FreeRTOS creates main_task which calls it).
+      |                                         ^~~~~~~~
+/home/gen/Projects/rover/main/main.c:255:97: error: stray '\342' in program
+  255 |         Your main.c must live under main/ and be listed in idf_component_register(SRCS "main.c" <U+2026>).
+      |                                                                                                 ^~~~~~~~
+/home/gen/Projects/rover/main/main.c:257:81: error: stray '\342' in program
+  257 |         If the file is named something else (main.cpp for example), but you didn<U+2019>t update CMakeLists.txt, the symbol won<U+2019>t exist.
+      |                                                                                 ^~~~~~~~
+/home/gen/Projects/rover/main/main.c:257:121: error: stray '\342' in program
+  257 |         If the file is named something else (main.cpp for example), but you didn<U+2019>t update CMakeLists.txt, the symbol won<U+2019>t exist.
+      |                                                                                                                                ^~~~~~~~
+/home/gen/Projects/rover/main/main.c:267:1: error: 'Not' undeclared (first use in this function)
+  267 | Not int app_main() or void app_main() {}
+      | ^~~
+/home/gen/Projects/rover/main/main.c:267:4: error: expected ';' before 'int'
+  267 | Not int app_main() or void app_main() {}
+      |    ^~~~
+      |    ;
+/home/gen/Projects/rover/main/main.c:278:31: error: stray '\342' in program
+  278 |         If you renamed main.c <U+2192> main.cpp,
+      |                               ^~~~~~~~
+/home/gen/Projects/rover/main/main.c:286:1: error: stray '\342' in program
+  286 | <U+2705> Quick test : In main / main.c, add this stub and rebuild :
+      | ^~~~~~~~
+/home/gen/Projects/rover/main/main.c:297:25: error: stray '\342' in program
+  297 |                     didn<U+2019>t compile into the build.
+      |                         ^~~~~~~~
+/home/gen/Projects/rover/main/main.c:302:25: error: stray '\342' in program
+  302 |             main.c so it<U+2019>s guaranteed to export app_main(void)(
+      |                         ^~~~~~~~
+/home/gen/Projects/rover/main/main.c:307:26: error: stray '\342' in program
+  307 |     : Xiao Esp32s3 Sense <U+2013> Esp<U+2011>idf Camera Streaming Web Server(mjpeg)
+      |                          ^~~~~~~~
+/home/gen/Projects/rover/main/main.c:307:31: error: stray '\342' in program
+  307 |     : Xiao Esp32s3 Sense <U+2013> Esp<U+2011>idf Camera Streaming Web Server(mjpeg)
+      |                                      ^~~~~~~~
+/home/gen/Projects/rover/main/main.c:309:20: warning: extra tokens at end of #include directive
+  309 | #include <stdio.h> #include <string.h> #include "esp_camera.h" #include "esp_log.h" #include "esp_http_server.h" #include "nvs_flash.h" #include "esp_event.h" #include "esp_netif.h" #include "esp_wifi.h"
+      |                    ^
+/home/gen/Projects/rover/main/main.c:325:18: error: invalid storage class for function 'jpg_handler'
+  325 | static esp_err_t jpg_handler(httpd_req_t * req) {
+      |                  ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:338:18: error: invalid storage class for function 'stream_handler'
+  338 | static esp_err_t stream_handler(httpd_req_t * req) {
+      |                  ^~~~~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c: In function 'stream_handler':
+/home/gen/Projects/rover/main/main.c:340:28: error: 'STREAM_CONTENT_TYPE' undeclared (first use in this function)
+  340 |   httpd_resp_set_type(req, STREAM_CONTENT_TYPE);
+      |                            ^~~~~~~~~~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:348:53: error: 'STREAM_PART' undeclared (first use in this function)
+  348 |     int hlen = snprintf(part_buf, sizeof(part_buf), STREAM_PART, fb->len);
+      |                                                     ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:349:36: error: 'STREAM_BOUNDARY' undeclared (first use in this function)
+  349 |     if (httpd_resp_send_chunk(req, STREAM_BOUNDARY, strlen(STREAM_BOUNDARY)) !=
+      |                                    ^~~~~~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c: In function 'app_main':
+/home/gen/Projects/rover/main/main.c:362:18: error: invalid storage class for function 'root_handler'
+  362 | static esp_err_t root_handler(httpd_req_t * req) {
+      |                  ^~~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c: In function 'root_handler':
+/home/gen/Projects/rover/main/main.c:363:50: error: 'stream' undeclared (first use in this function); did you mean 'strcat'?
+  363 |   const char *html = "ESP32S3 Camera<img src=" / stream ">";
+      |                                                  ^~~~~~
+      |                                                  strcat
+/home/gen/Projects/rover/main/main.c:363:57: error: expected ',' or ';' before string constant
+  363 |   const char *html = "ESP32S3 Camera<img src=" / stream ">";
+      |                                                         ^~~
+/home/gen/Projects/rover/main/main.c: In function 'app_main':
+/home/gen/Projects/rover/main/main.c:368:23: error: invalid storage class for function 'start_webserver'
+  368 | static httpd_handle_t start_webserver(void) {
+      |                       ^~~~~~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:393:13: error: invalid storage class for function 'start_camera'
+  393 | static void start_camera(void) {
+      |             ^~~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c: In function 'start_camera':
+/home/gen/Projects/rover/main/main.c:394:41: error: 'PWDN_GPIO_NUM' undeclared (first use in this function); did you mean 'Y9_GPIO_NUM'?
+  394 |   camera_config_t config = {.pin_pwdn = PWDN_GPIO_NUM,
+      |                                         ^~~~~~~~~~~~~
+      |                                         Y9_GPIO_NUM
+/home/gen/Projects/rover/main/main.c:395:42: error: 'RESET_GPIO_NUM' undeclared (first use in this function)
+  395 |                             .pin_reset = RESET_GPIO_NUM,
+      |                                          ^~~~~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:396:41: error: 'XCLK_GPIO_NUM' undeclared (first use in this function); did you mean 'Y9_GPIO_NUM'?
+  396 |                             .pin_xclk = XCLK_GPIO_NUM,
+      |                                         ^~~~~~~~~~~~~
+      |                                         Y9_GPIO_NUM
+/home/gen/Projects/rover/main/main.c:397:45: error: 'SIOD_GPIO_NUM' undeclared (first use in this function); did you mean 'Y9_GPIO_NUM'?
+  397 |                             .pin_sccb_sda = SIOD_GPIO_NUM,
+      |                                             ^~~~~~~~~~~~~
+      |                                             Y9_GPIO_NUM
+/home/gen/Projects/rover/main/main.c:398:45: error: 'SIOC_GPIO_NUM' undeclared (first use in this function); did you mean 'Y9_GPIO_NUM'?
+  398 |                             .pin_sccb_scl = SIOC_GPIO_NUM,
+      |                                             ^~~~~~~~~~~~~
+      |                                             Y9_GPIO_NUM
+/home/gen/Projects/rover/main/main.c:318:4: error: stray '#' in program
+  318 | 48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |    ^
+/home/gen/Projects/rover/main/main.c:399:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  399 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:318:5: error: expected '}' before 'define'
+  318 | 48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |     ^~~~~~
+/home/gen/Projects/rover/main/main.c:399:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  399 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:394:28: note: to match this '{'
+  394 |   camera_config_t config = {.pin_pwdn = PWDN_GPIO_NUM,
+      |                            ^
+/home/gen/Projects/rover/main/main.c:318:27: error: stray '#' in program
+  318 | 48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |                           ^
+/home/gen/Projects/rover/main/main.c:399:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  399 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:318:50: error: stray '#' in program
+  318 | 48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |                                                  ^
+/home/gen/Projects/rover/main/main.c:399:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  399 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:318:73: error: stray '#' in program
+  318 | 48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |                                                                         ^
+/home/gen/Projects/rover/main/main.c:399:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  399 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:318:96: error: stray '#' in program
+  318 | 48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |                                                                                                ^
+/home/gen/Projects/rover/main/main.c:399:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  399 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:318:119: error: stray '#' in program
+  318 | 48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |                                                                                                                       ^
+/home/gen/Projects/rover/main/main.c:399:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  399 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:318:142: error: stray '#' in program
+  318 | 48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |                                                                                                                                              ^
+/home/gen/Projects/rover/main/main.c:399:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  399 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:318:165: error: stray '#' in program
+  318 | 48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |                                                                                                                                                                     ^
+/home/gen/Projects/rover/main/main.c:399:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  399 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:318:191: error: stray '#' in program
+  318 | 48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |                                                                                                                                                                                               ^
+/home/gen/Projects/rover/main/main.c:399:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  399 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c:318:216: error: stray '#' in program
+  318 | 48 #define Y8_GPIO_NUM 11 #define Y7_GPIO_NUM 12 #define Y6_GPIO_NUM 14 #define Y5_GPIO_NUM 16 #define Y4_GPIO_NUM 18 #define Y3_GPIO_NUM 17 #define Y2_GPIO_NUM 15 #define VSYNC_GPIO_NUM 38 #define HREF_GPIO_NUM 47 #define PCLK_GPIO_NUM 13
+      |                                                                                                                                                                                                                        ^
+/home/gen/Projects/rover/main/main.c:399:39: note: in expansion of macro 'Y9_GPIO_NUM'
+  399 |                             .pin_d7 = Y9_GPIO_NUM,
+      |                                       ^~~~~~~~~~~
+/home/gen/Projects/rover/main/main.c: In function 'app_main':
+/home/gen/Projects/rover/main/main.c:459:1: error: expected declaration or statement at end of input
+  459 | }
+      | ^
+/home/gen/Projects/rover/main/main.c: At top level:
+/home/gen/Projects/rover/main/main.c:429:6: warning: 'app_main' defined but not used [-Wunused-function]
+  429 | void app_main(void) {
+      |      ^~~~~~~~
+ninja: build stopped: subcommand failed.

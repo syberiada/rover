@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/gen/Projects/rover/build/CMakeFiles/bootloader
+/home/gen/Projects/rover/build/CMakeFiles/bootloader.rule
+/home/gen/Projects/rover/build/CMakeFiles/bootloader-complete.rule
+/home/gen/Projects/rover/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/gen/Projects/rover/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/gen/Projects/rover/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/gen/Projects/rover/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/gen/Projects/rover/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/gen/Projects/rover/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/gen/Projects/rover/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

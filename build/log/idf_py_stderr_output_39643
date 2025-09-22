@@ -1,0 +1,37 @@
+Command: /home/gen/.espressif/python_env/idf5.5_py3.13_env/bin/python /home/gen/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/gen/Projects/rover/build/esp_xiao_cam_server.elf /home/gen/Projects/rover/build/bootloader/bootloader.elf -m '/home/gen/.espressif/python_env/idf5.5_py3.13_env/bin/python' '/home/gen/esp/esp-idf/tools/idf.py'
+[0;33m--- esp-idf-monitor 1.7.0 on /dev/ttyACM0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x4037a45e: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m64[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8924: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x403755f8: [0;33mcall_start_cpu1[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m197[0m
+[0m--- 0x420022f8: [0;33m__esp_system_init_fn_init_efuse_check[0m[0m at [0;32m/home/gen/esp/esp-idf/components/efuse/src/esp_efuse_startup.c[0m[0m:[1;31m37[0m
+[0m--- 0x42002764: [0;33m__esp_system_init_fn_init_show_cpu_freq[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/startup_funcs.c[0m[0m:[1;31m64[0m
+[0m--- 0x42002228: [0;33m__esp_system_init_fn_init_show_app_info[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_app_format/esp_app_desc.c[0m[0m:[1;31m123[0m
+[0m--- 0x4200230c: [0;33m__esp_system_init_fn_init_efuse_show_app_info[0m[0m at [0;32m/home/gen/esp/esp-idf/components/efuse/src/esp_efuse_startup.c[0m[0m:[1;31m47[0m
+[0m--- 0x4200437c: [0;33m__esp_system_init_fn_init_heap[0m[0m at [0;32m/home/gen/esp/esp-idf/components/heap/heap_caps_init.c[0m[0m:[1;31m26[0m
+[0m--- 0x40374000: [0;33m_WindowOverflow4[0m[0m at [0;32m/home/gen/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2027[0m
+[0m--- 0x42007928: [0;33m__esp_system_init_fn_esp_timer_init_nonos[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_timer/src/esp_timer_init.c[0m[0m:[1;31m28[0m
+[0m--- 0x42007314: [0;33m__esp_system_init_fn_init_libc[0m[0m at [0;32m/home/gen/esp/esp-idf/components/newlib/src/init.c[0m[0m:[1;31m12[0m
+[0m--- 0x4200b920: [0;33m__esp_system_init_fn_add_psram_to_heap[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_psram/system_layer/esp_psram.c[0m[0m:[1;31m115[0m
+[0m--- 0x420027b0: [0;33m__esp_system_init_fn_init_brownout[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/startup_funcs.c[0m[0m:[1;31m79[0m
+[0m--- 0x420027c0: [0;33m__esp_system_init_fn_init_newlib_time[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/startup_funcs.c[0m[0m:[1;31m104[0m
+[0m--- 0x4200894c: [0;33m__esp_system_init_fn_init_vfs_uart[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m1148[0m
+[0m--- 0x420099f0: [0;33m__esp_system_init_fn_init_vfs_usj_sec[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_vfs.c[0m[0m:[1;31m657[0m
+[0m--- 0x4200b4b8: [0;33m__esp_system_init_fn_init_vfs_nullfs[0m[0m at [0;32m/home/gen/esp/esp-idf/components/vfs/nullfs.c[0m[0m:[1;31m322[0m
+[0m--- 0x42009c68: [0;33m__esp_system_init_fn_init_vfs_console[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m271[0m
+[0m--- 0x42007320: [0;33m__esp_system_init_fn_init_libc_stdio[0m[0m at [0;32m/home/gen/esp/esp-idf/components/newlib/src/init.c[0m[0m:[1;31m18[0m
+[0m--- 0x420027cc: [0;33m__esp_system_init_fn_init_flash[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/startup_funcs.c[0m[0m:[1;31m111[0m
+[0m--- 0x420023a8: [0;33m__esp_system_init_fn_init_efuse[0m[0m at [0;32m/home/gen/esp/esp-idf/components/efuse/src/esp_efuse_startup.c[0m[0m:[1;31m158[0m
+[0m--- 0x4207554c: [0;33m_GLOBAL__sub_I__ZN17__eh_globals_init7_S_initE[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/gcc/libstdc++-v3/libsupc++/eh_globals.cc[0m[0m:[1;31m162[0m
+[0m--- 0x4201985c: [0;33ms_set_default_wifi_log_level[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_wifi/src/wifi_init.c[0m[0m:[1;31m110[0m
+[0m--- 0x4037c5f0: [0;33menable_timer_group0_for_calibration[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_hw_support/port/esp32s3/rtc_time.c[0m[0m:[1;31m201[0m
+[0m--- 0x42003a24: [0;33mesp_ipc_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/esp_ipc.c[0m[0m:[1;31m107[0m
+[0m--- 0x4204ff5c: [0;33m__esp_system_init_fn_esp_timer_init_os[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_timer/src/esp_timer.c[0m[0m:[1;31m566[0m
+[0m--- 0x4208974c: [0;33m__esp_system_init_fn_esp_security_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_security/src/init.c[0m[0m:[1;31m42[0m
+[0m--- 0x4200525c: [0;33m__esp_system_init_fn_esp_sleep_startup_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_hw_support/sleep_gpio.c[0m[0m:[1;31m225[0m
+[0m--- 0x42002800: [0;33m__esp_system_init_fn_init_apb_dma[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/startup_funcs.c[0m[0m:[1;31m150[0m
+[0m--- 0x42009310: [0;33m__esp_system_init_fn_usb_serial_jtag_conn_status_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_connection_monitor.c[0m[0m:[1;31m75[0m
+[0m--- 0x4200280c: [0;33m__esp_system_init_fn_init_disable_rtc_wdt[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/startup_funcs.c[0m[0m:[1;31m179[0m
+[0m--- 0x420180ac: [0;33mget_handle_from_ifkey_api[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c[0m[0m:[1;31m873[0m
+[0m

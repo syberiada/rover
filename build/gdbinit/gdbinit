@@ -1,0 +1,2 @@
+source /home/gen/Projects/rover/build/gdbinit/symbols
+source /home/gen/Projects/rover/build/gdbinit/connect

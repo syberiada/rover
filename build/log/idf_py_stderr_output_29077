@@ -1,0 +1,179 @@
+Command: /home/gen/.espressif/python_env/idf5.5_py3.13_env/bin/python /home/gen/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/gen/Projects/rover/build/esp_xiao_cam_server.elf /home/gen/Projects/rover/build/bootloader/bootloader.elf -m '/home/gen/.espressif/python_env/idf5.5_py3.13_env/bin/python' '/home/gen/esp/esp-idf/tools/idf.py'
+[0;33m--- esp-idf-monitor 1.7.0 on /dev/ttyACM0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x403cd824: [0;33mprocess_segment_data[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/esp_image_format.c[0m[0m:[1;31m766[0m
+[0m--- (inlined by) [0;33mprocess_segment[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/esp_image_format.c[0m[0m:[1;31m649[0m
+[0m--- (inlined by) [0;33mprocess_segments[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/esp_image_format.c[0m[0m:[1;31m561[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8924: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x42002f2f: [0;33mmspi_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m596[0m
+[0m--- 0x4037cec5: [0;33mpanic_abort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x4037ce8d: [0;33mesp_system_abort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x40385421: [0;33mabort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/newlib/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x42002f2f: [0;33mmspi_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m596[0m
+[0m--- 0x4037569f: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m924[0m
+[0m--- 0x403ccac4: [0;33mset_cache_and_start_app[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m1156[0m
+[0m--- (inlined by) [0;33munpack_load_app[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m891[0m
+[0m--- (inlined by) [0;33mload_image[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m801[0m
+[0m--- 0x403ccf09: [0;33mbootloader_utility_load_boot_image[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m603[0m
+[0m--- 0x403c898d: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m62[0m
+[0m--- 0x40045c01: [0;33mets_run_flash_bootloader[0m[0m in [0;32mROM[0m
+[0m--- 0x40043ab6: [0;33mmain[0m[0m in [0;32mROM[0m
+[0m--- 0x40034c45: [0;33m.stack_ok[0m[0m in [0;32mROM[0m
+[0m--- 0x4037d065: [0;33mesp_restart_noos[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m162[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8924: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x42002f2f: [0;33mmspi_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m596[0m
+[0m--- 0x4037cec5: [0;33mpanic_abort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x4037ce8d: [0;33mesp_system_abort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x40385421: [0;33mabort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/newlib/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x42002f2f: [0;33mmspi_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m596[0m
+[0m--- 0x4037569f: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m924[0m
+[0m--- 0x403ccac4: [0;33mset_cache_and_start_app[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m1156[0m
+[0m--- (inlined by) [0;33munpack_load_app[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m891[0m
+[0m--- (inlined by) [0;33mload_image[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m801[0m
+[0m--- 0x403ccf09: [0;33mbootloader_utility_load_boot_image[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m603[0m
+[0m--- 0x403c898d: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m62[0m
+[0m--- 0x40045c01: [0;33mets_run_flash_bootloader[0m[0m in [0;32mROM[0m
+[0m--- 0x40043ab6: [0;33mmain[0m[0m in [0;32mROM[0m
+[0m--- 0x40034c45: [0;33m.stack_ok[0m[0m in [0;32mROM[0m
+[0m--- 0x4037d065: [0;33mesp_restart_noos[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m162[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8924: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x42002f2f: [0;33mmspi_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m596[0m
+[0m--- 0x4037cec5: [0;33mpanic_abort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x4037ce8d: [0;33mesp_system_abort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x40385421: [0;33mabort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/newlib/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x42002f2f: [0;33mmspi_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m596[0m
+[0m--- 0x4037569f: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m924[0m
+[0m--- 0x403ccac4: [0;33mset_cache_and_start_app[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m1156[0m
+[0m--- (inlined by) [0;33munpack_load_app[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m891[0m
+[0m--- (inlined by) [0;33mload_image[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m801[0m
+[0m--- 0x403ccf09: [0;33mbootloader_utility_load_boot_image[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m603[0m
+[0m--- 0x403c898d: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m62[0m
+[0m--- 0x40045c01: [0;33mets_run_flash_bootloader[0m[0m in [0;32mROM[0m
+[0m--- 0x40043ab6: [0;33mmain[0m[0m in [0;32mROM[0m
+[0m--- 0x40034c45: [0;33m.stack_ok[0m[0m in [0;32mROM[0m
+[0m--- 0x4037d065: [0;33mesp_restart_noos[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m162[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8924: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x42002f2f: [0;33mmspi_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m596[0m
+[0m--- 0x4037cec5: [0;33mpanic_abort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x4037ce8d: [0;33mesp_system_abort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x40385421: [0;33mabort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/newlib/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x42002f2f: [0;33mmspi_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m596[0m
+[0m--- 0x4037569f: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m924[0m
+[0m--- 0x403ccac4: [0;33mset_cache_and_start_app[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m1156[0m
+[0m--- (inlined by) [0;33munpack_load_app[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m891[0m
+[0m--- (inlined by) [0;33mload_image[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m801[0m
+[0m--- 0x403ccf09: [0;33mbootloader_utility_load_boot_image[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m603[0m
+[0m--- 0x403c898d: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m62[0m
+[0m--- 0x40045c01: [0;33mets_run_flash_bootloader[0m[0m in [0;32mROM[0m
+[0m--- 0x40043ab6: [0;33mmain[0m[0m in [0;32mROM[0m
+[0m--- 0x40034c45: [0;33m.stack_ok[0m[0m in [0;32mROM[0m
+[0m--- 0x4037d065: [0;33mesp_restart_noos[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m162[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8924: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x42002f2f: [0;33mmspi_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m596[0m
+[0m--- 0x4037cec5: [0;33mpanic_abort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x4037ce8d: [0;33mesp_system_abort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x40385421: [0;33mabort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/newlib/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x42002f2f: [0;33mmspi_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m596[0m
+[0m--- 0x4037569f: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m924[0m
+[0m--- 0x403ccac4: [0;33mset_cache_and_start_app[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m1156[0m
+[0m--- (inlined by) [0;33munpack_load_app[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m891[0m
+[0m--- (inlined by) [0;33mload_image[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m801[0m
+[0m--- 0x403ccf09: [0;33mbootloader_utility_load_boot_image[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m603[0m
+[0m--- 0x403c898d: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m62[0m
+[0m--- 0x40045c01: [0;33mets_run_flash_bootloader[0m[0m in [0;32mROM[0m
+[0m--- 0x40043ab6: [0;33mmain[0m[0m in [0;32mROM[0m
+[0m--- 0x40034c45: [0;33m.stack_ok[0m[0m in [0;32mROM[0m
+[0m--- 0x4037d065: [0;33mesp_restart_noos[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m162[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8924: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x42002f2f: [0;33mmspi_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m596[0m
+[0m--- 0x4037cec5: [0;33mpanic_abort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x4037ce8d: [0;33mesp_system_abort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x40385421: [0;33mabort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/newlib/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x42002f2f: [0;33mmspi_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m596[0m
+[0m--- 0x4037569f: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m924[0m
+[0m--- 0x403ccac4: [0;33mset_cache_and_start_app[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m1156[0m
+[0m--- (inlined by) [0;33munpack_load_app[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m891[0m
+[0m--- (inlined by) [0;33mload_image[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m801[0m
+[0m--- 0x403ccf09: [0;33mbootloader_utility_load_boot_image[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m603[0m
+[0m--- 0x403c898d: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m62[0m
+[0m--- 0x40045c01: [0;33mets_run_flash_bootloader[0m[0m in [0;32mROM[0m
+[0m--- 0x40043ab6: [0;33mmain[0m[0m in [0;32mROM[0m
+[0m--- 0x40034c45: [0;33m.stack_ok[0m[0m in [0;32mROM[0m
+[0m--- 0x4037d065: [0;33mesp_restart_noos[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m162[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8924: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x42002f2f: [0;33mmspi_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m596[0m
+[0m--- 0x4037cec5: [0;33mpanic_abort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x4037ce8d: [0;33mesp_system_abort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x40385421: [0;33mabort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/newlib/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x42002f2f: [0;33mmspi_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m596[0m
+[0m--- 0x4037569f: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m924[0m
+[0m--- 0x403ccac4: [0;33mset_cache_and_start_app[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m1156[0m
+[0m--- (inlined by) [0;33munpack_load_app[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m891[0m
+[0m--- (inlined by) [0;33mload_image[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m801[0m
+[0m--- 0x403ccf09: [0;33mbootloader_utility_load_boot_image[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m603[0m
+[0m--- 0x403c898d: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m62[0m
+[0m--- 0x40045c01: [0;33mets_run_flash_bootloader[0m[0m in [0;32mROM[0m
+[0m--- 0x40043ab6: [0;33mmain[0m[0m in [0;32mROM[0m
+[0m--- 0x40034c45: [0;33m.stack_ok[0m[0m in [0;32mROM[0m
+[0m--- 0x4037d065: [0;33mesp_restart_noos[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m162[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8924: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x42002f2f: [0;33mmspi_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m596[0m
+[0m--- 0x4037cec5: [0;33mpanic_abort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x4037ce8d: [0;33mesp_system_abort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x40385421: [0;33mabort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/newlib/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x42002f2f: [0;33mmspi_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m596[0m
+[0m--- 0x4037569f: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m924[0m
+[0m--- 0x403ccac4: [0;33mset_cache_and_start_app[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m1156[0m
+[0m--- (inlined by) [0;33munpack_load_app[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m891[0m
+[0m--- (inlined by) [0;33mload_image[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m801[0m
+[0m--- 0x403ccf09: [0;33mbootloader_utility_load_boot_image[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m603[0m
+[0m--- 0x403c898d: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m62[0m
+[0m--- 0x40045c01: [0;33mets_run_flash_bootloader[0m[0m in [0;32mROM[0m
+[0m--- 0x40043ab6: [0;33mmain[0m[0m in [0;32mROM[0m
+[0m--- 0x40034c45: [0;33m.stack_ok[0m[0m in [0;32mROM[0m
+[0m--- 0x4037d065: [0;33mesp_restart_noos[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m162[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8924: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x42002f2f: [0;33mmspi_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m596[0m
+[0m--- 0x4037cec5: [0;33mpanic_abort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x4037ce8d: [0;33mesp_system_abort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x40385421: [0;33mabort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/newlib/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x42002f2f: [0;33mmspi_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m596[0m
+[0m--- 0x4037569f: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m924[0m
+[0m--- 0x403ccac4: [0;33mset_cache_and_start_app[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m1156[0m
+[0m--- (inlined by) [0;33munpack_load_app[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m891[0m
+[0m--- (inlined by) [0;33mload_image[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m801[0m
+[0m--- 0x403ccf09: [0;33mbootloader_utility_load_boot_image[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m603[0m
+[0m--- 0x403c898d: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m62[0m
+[0m--- 0x40045c01: [0;33mets_run_flash_bootloader[0m[0m in [0;32mROM[0m
+[0m--- 0x40043ab6: [0;33mmain[0m[0m in [0;32mROM[0m
+[0m--- 0x40034c45: [0;33m.stack_ok[0m[0m in [0;32mROM[0m
+[0m--- 0x4037d065: [0;33mesp_restart_noos[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m162[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8924: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x42002f2f: [0;33mmspi_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m596[0m
+[0m--- 0x4037cec5: [0;33mpanic_abort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x4037ce8d: [0;33mesp_system_abort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x40385421: [0;33mabort[0m[0m at [0;32m/home/gen/esp/esp-idf/components/newlib/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x42002f2f: [0;33mmspi_init[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m596[0m
+[0m--- 0x4037569f: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m924[0m
+[0m--- 0x403ccac4: [0;33mset_cache_and_start_app[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m1156[0m
+[0m--- (inlined by) [0;33munpack_load_app[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m891[0m
+[0m--- (inlined by) [0;33mload_image[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m801[0m
+[0m--- 0x403ccf09: [0;33mbootloader_utility_load_boot_image[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader_support/src/bootloader_utility.c[0m[0m:[1;31m603[0m
+[0m--- 0x403c898d: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m62[0m
+[0m--- 0x40045c01: [0;33mets_run_flash_bootloader[0m[0m in [0;32mROM[0m
+[0m--- 0x40043ab6: [0;33mmain[0m[0m in [0;32mROM[0m
+[0m--- 0x40034c45: [0;33m.stack_ok[0m[0m in [0;32mROM[0m
+[0m--- 0x4037d065: [0;33mesp_restart_noos[0m[0m at [0;32m/home/gen/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m162[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8924: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/gen/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m

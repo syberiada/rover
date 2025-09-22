@@ -1,0 +1,76 @@
+Command: ninja flash
+[1/5] cd /home/gen/Projects/rover/build/esp-idf/esptool_py && /home/gen/.espressif/python_env/idf5.5_py3.13_env/bin/python /home/gen/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/gen/Projects/rover/build/partition_table/partition-table.bin /home/gen/Projects/rover/build/esp_xiao_cam_server.bin
+esp_xiao_cam_server.bin binary size 0xd59a0 bytes. Smallest app partition is 0x100000 bytes. 0x2a660 bytes (17%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /home/gen/Projects/rover/build/bootloader/esp-idf/esptool_py && /home/gen/.espressif/python_env/idf5.5_py3.13_env/bin/python /home/gen/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/gen/Projects/rover/build/bootloader/bootloader.bin
+Bootloader binary size 0x5240 bytes. 0x2dc0 bytes (36%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] cd /home/gen/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/gen/esp/esp-idf -D "SERIAL_TOOL=/home/gen/.espressif/python_env/idf5.5_py3.13_env/bin/python;;/home/gen/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32s3" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/gen/Projects/rover/build -P /home/gen/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32s3 -p /dev/ttyACM0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size detect 0x0 bootloader/bootloader.bin 0x10000 esp_xiao_cam_server.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.10.dev2
+Serial port /dev/ttyACM0
+Connecting...
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+USB mode: USB-Serial/JTAG
+MAC: 8c:bf:ea:8e:3f:20
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Auto-detected Flash size: 8MB
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x000e5fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 21056 bytes to 13388...
+Writing at 0x00000000... (100 %)
+Wrote 21056 bytes (13388 compressed) at 0x00000000 in 0.3 seconds (effective 523.0 kbit/s)...
+Hash of data verified.
+Compressed 874912 bytes to 532378...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001ce7f... (6 %)
+Writing at 0x000278fa... (9 %)
+Writing at 0x00031f67... (12 %)
+Writing at 0x0003b442... (15 %)
+Writing at 0x0004156c... (18 %)
+Writing at 0x0004795f... (21 %)
+Writing at 0x0004dce2... (24 %)
+Writing at 0x00054423... (27 %)
+Writing at 0x0005a5ee... (30 %)
+Writing at 0x000605c9... (33 %)
+Writing at 0x00066284... (36 %)
+Writing at 0x0006bfcd... (39 %)
+Writing at 0x00071723... (42 %)
+Writing at 0x00076b72... (45 %)
+Writing at 0x0007bf1e... (48 %)
+Writing at 0x0008102d... (51 %)
+Writing at 0x0008666e... (54 %)
+Writing at 0x0008bd8f... (57 %)
+Writing at 0x00091f50... (60 %)
+Writing at 0x00097873... (63 %)
+Writing at 0x0009d468... (66 %)
+Writing at 0x000a3116... (69 %)
+Writing at 0x000a8a86... (72 %)
+Writing at 0x000ae7bb... (75 %)
+Writing at 0x000b4a2a... (78 %)
+Writing at 0x000ba096... (81 %)
+Writing at 0x000c0a5a... (84 %)
+Writing at 0x000cab56... (87 %)
+Writing at 0x000d09b6... (90 %)
+Writing at 0x000d6d8f... (93 %)
+Writing at 0x000dd51f... (96 %)
+Writing at 0x000e258c... (100 %)
+Wrote 874912 bytes (532378 compressed) at 0x00010000 in 5.5 seconds (effective 1284.2 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 613.6 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
