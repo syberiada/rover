@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
+#include "esp_littlefs.h"
+#include "driver/gpio.h"
 
 static const char *TAG = "camera_server";
 
@@ -30,6 +32,20 @@ static const char *TAG = "camera_server";
 #define VSYNC_GPIO_NUM 38
 #define HREF_GPIO_NUM 47
 #define PCLK_GPIO_NUM 13
+
+// Pin map for track control
+
+#define LEFT_FWD 5
+#define LEFT_REV 2
+#define RIGHT_FWD 3
+#define RIGHT_REV 4
+
+typedef struct {
+    int pin;
+    int channel;
+    int freq_hz;
+    int fade_delay_ms;
+} pwm_blink_config_t;
 
 // HTTP response headers
 #define STREAM_CONTENT_TYPE "multipart/x-mixed-replace;boundary=frame"
@@ -75,10 +91,29 @@ static esp_err_t stream_handler(httpd_req_t *req) {
 }
 
 static esp_err_t root_handler(httpd_req_t *req) {
-  const char *html = "ESP32S3 Camera";
-  httpd_resp_set_type(req, "text/html");
-  return httpd_resp_send(req, html, HTTPD_RESP_USE_STRLEN);
+    FILE *f = fopen("/www/index.html", "r");
+    if (!f) {
+        httpd_resp_send_404(req);
+        return ESP_FAIL;
+    }
+
+    httpd_resp_set_type(req, "text/html");
+
+    char buffer[512];
+    size_t read_bytes;
+    while ((read_bytes = fread(buffer, 1, sizeof(buffer), f)) > 0) {
+        if (httpd_resp_send_chunk(req, buffer, read_bytes) != ESP_OK) {
+            fclose(f);
+            httpd_resp_sendstr_chunk(req, NULL); // end response
+            return ESP_FAIL;
+        }
+    }
+
+    fclose(f);
+    httpd_resp_send_chunk(req, NULL, 0); // end response
+    return ESP_OK;
 }
+
 
 static httpd_handle_t start_webserver(void) {
   httpd_config_t config = HTTPD_DEFAULT_CONFIG();
@@ -139,6 +174,13 @@ static void start_camera(void) {
     ESP_LOGE(TAG, "Camera init failed with error 0x%x", err);
   } else {
     ESP_LOGI(TAG, "Camera init succeeded");
+    sensor_t *s = esp_camera_sensor_get();
+    if (s) {
+      s->set_whitebal(s, 1); // Enable AWB
+      s->set_gain_ctrl(s, 1); // Enable auto gain
+      s->set_exposure_ctrl(s, 1); // Enable auto exposure
+      ESP_LOGI(TAG, "Auto white balance, gain, and exposure enabled");
+    }
   }
 }
 
@@ -159,7 +201,97 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base,
   }
 }
 
+static void init_filesystem(void) {
+    esp_vfs_littlefs_conf_t conf = {
+        .base_path = "/www",
+        .partition_label = "littlefs",
+        .format_if_mount_failed = true,
+        .dont_mount = false,
+    };
+
+    esp_err_t ret = esp_vfs_littlefs_register(&conf);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to mount or format LittleFS (%s)", esp_err_to_name(ret));
+    } else {
+        size_t total = 0, used = 0;
+        esp_littlefs_info(conf.partition_label, &total, &used);
+        ESP_LOGI(TAG, "LittleFS mounted, total: %d, used: %d", total, used);
+    }
+}
+
+void pwm_blink_task(void *pvParameter)
+{
+    pwm_blink_config_t cfg = *(pwm_blink_config_t *)pvParameter;
+    free(pvParameter);  // free allocated config after copy
+
+    while (1) {
+        // Fade up
+        for (int duty = 0; duty <= 8191; duty += 128) {
+            ledc_set_duty(LEDC_LOW_SPEED_MODE, cfg.channel, duty);
+            ledc_update_duty(LEDC_LOW_SPEED_MODE, cfg.channel);
+            vTaskDelay(pdMS_TO_TICKS(cfg.fade_delay_ms));
+        }
+        // Fade down
+        for (int duty = 8191; duty >= 0; duty -= 128) {
+            ledc_set_duty(LEDC_LOW_SPEED_MODE, cfg.channel, duty);
+            ledc_update_duty(LEDC_LOW_SPEED_MODE, cfg.channel);
+            vTaskDelay(pdMS_TO_TICKS(cfg.fade_delay_ms));
+        }
+    }
+}
+
+void start_pwm_blink(int pin, int channel, int freq_hz, int fade_delay_ms)
+{
+    if (channel >= 8) {
+        printf("Error: only %d channels supported\n", 8);
+        return;
+    }
+
+    // Configure timer (one timer can be shared)
+    ledc_timer_config_t ledc_timer = {
+        .speed_mode       = LEDC_LOW_SPEED_MODE,
+        .duty_resolution  = LEDC_TIMER_13_BIT,  // 0–8191
+        .timer_num        = LEDC_TIMER_0,
+        .freq_hz          = freq_hz,
+        .clk_cfg          = LEDC_AUTO_CLK,
+    };
+    ledc_timer_config(&ledc_timer);
+
+    // Configure channel
+    ledc_channel_config_t ledc_channel = {
+        .gpio_num   = pin,
+        .speed_mode = LEDC_LOW_SPEED_MODE,
+        .channel    = channel,
+        .timer_sel  = LEDC_TIMER_0,
+        .duty       = 0,
+        .hpoint     = 0,
+    };
+    ledc_channel_config(&ledc_channel);
+
+    // Prepare config for the task
+    pwm_blink_config_t *cfg = malloc(sizeof(pwm_blink_config_t));
+    cfg->pin = pin;
+    cfg->channel = channel;
+    cfg->freq_hz = freq_hz;
+    cfg->fade_delay_ms = fade_delay_ms;
+
+    // Launch async task
+    xTaskCreate(pwm_blink_task, "pwm_blink_task", 2048, cfg, 5, NULL);
+}
+
 void app_main(void) {
+  uint64_t pin_mask = (1ULL << LEFT_FWD) | (1ULL << LEFT_REV) | (1ULL << RIGHT_FWD) | (1ULL << RIGHT_REV);
+
+  gpio_config_t io_conf = {
+      .pin_bit_mask = pin_mask,
+      .mode = GPIO_MODE_OUTPUT,
+      .pull_up_en = GPIO_PULLUP_DISABLE,
+      .pull_down_en = GPIO_PULLDOWN_DISABLE,
+      .intr_type = GPIO_INTR_DISABLE,
+  };
+  gpio_config(&io_conf);
+  //start_pwm_blink(RIGHT_FWD, 0, 5000, 20);
+
   esp_err_t ret = nvs_flash_init();
   if (ret == ESP_ERR_NVS_NO_FREE_PAGES ||
       ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
@@ -167,6 +299,7 @@ void app_main(void) {
     ret = nvs_flash_init();
   }
   ESP_ERROR_CHECK(ret);
+  init_filesystem();
 
   ESP_ERROR_CHECK(esp_netif_init());
   ESP_ERROR_CHECK(esp_event_loop_create_default());
